@@ -1,0 +1,39 @@
+body{
+    display: grid;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.767);
+    box-sizing: border-box;
+    place-items: center;
+}
+.items{
+    padding: 5%;
+}
+.btns{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+button{
+    height: 3rem;
+    width: 5rem;
+    background: rgba(22, 10, 128, 0.651);
+    border: none;
+    color: cornsilk;
+    border-radius: 30%;
+    font-weight: bolder;
+}
+button:hover{
+    background: cornsilk;
+    color: rgba(22, 10, 128, 0.651);
+
+}
+h1{
+    color: blanchedalmond;
+    font-size: 4rem;
+}
+p{
+    color: black;
+}
+.inp{
+    padding: 10% 0 0 0;
+}

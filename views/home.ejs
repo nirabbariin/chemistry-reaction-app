@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Equations</title>
+</head>
+<body>
+    <div class="items">
+        <h1> <%=items[random].name%> </h1>
+        <p> <%=items[random]._id%> </p>
+    </div>
+    <div class="btns">
+        <form action="/fail" method="POST">
+            <button type="submit" name="button" value="<%=items[random]._id%>">Fail</button>
+        </form>
+        <form action="/pass" method="POST">
+            <button type="submit" name="button" value="<%=items[random]._id%>">Pass</button>
+        </form>
+    </div>
+    <div class="inp">
+        <form action="/reset" method="POST">
+
+            <!-- <input type="text" name=""> -->
+            <button type="submit" >Reset</button>
+        </form>
+    </div>
+</body>
+</html>
+<!--  -->
