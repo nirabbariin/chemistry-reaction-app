@@ -34,25 +34,24 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/fail",(req,res)=>{
-    console.log(p);
     Reaction.findOneAndUpdate({_id:req.body.button},{attempt:(p[0]+1),fail:(p[2]+1)},
-        {upsert:true},{ useUnifiedTopology: true },(err,result)=>{
+        (err,result)=>{
             if (err) {
                 console.log(err);
-            }
+            }console.log(result);
         });
     res.redirect("/");
 });
 app.post("/pass",(req,res)=>{
     Reaction.findOneAndUpdate({_id:req.body.button},{attempt:(p[0]+1),pass:(p[1]+1)},
-        {upsert:true},{ useUnifiedTopology: true },(err,result)=>{
+        (err,result)=>{
             if (err) {
                 console.log(err);
             }else{
                 console.log(result);
-                if (result.pass > 2) {
+                if (result.pass == 3) {
                     Reaction.findOneAndUpdate({_id:req.body.button},{used:true},
-                    {upsert:true},{ useUnifiedTopology: true },(err,result)=>{
+                    (err,result)=>{
                         if (err) {
                             console.log(err);
                         }
@@ -71,3 +70,4 @@ app.post("/reset",(req,res)=>{
         });
     res.redirect("/");
 });
+//{upsert:true},{ useUnifiedTopology: true }

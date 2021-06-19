@@ -5,6 +5,9 @@ body{
     box-sizing: border-box;
     place-items: center;
 }
+/* .fill:hover,
+.fill:focus {
+} */
 .items{
     padding: 5%;
 }
@@ -23,9 +26,9 @@ button{
     font-weight: bolder;
 }
 button:hover{
-    background: cornsilk;
+    background-color: cornsilk;
     color: rgba(22, 10, 128, 0.651);
-
+    box-shadow: inset 0 0 0 2em var(--hover);
 }
 h1{
     color: blanchedalmond;
