@@ -70,4 +70,30 @@ app.post("/reset",(req,res)=>{
         });
     res.redirect("/");
 });
+app.get('/create', (req,res)=>{
+    res.render("create.ejs");
+});
+app.post('/create',(req,res)=>{
+    Reaction.create({
+        name:req.body.input,
+        attempt: 0,
+        pass: 0,
+        fail: 0,
+        used: false
+    },(err,obj)=>{
+        if (err) {
+            console.log(err);
+        }else{
+            console.log(obj);
+        }
+    });
+    res.redirect("/create");
+});
+app.get('/homeRedirect',(req,res)=>{
+    res.redirect('/');
+})
+// Tank.create({ size: 'small' }, function (err, small) {
+//     if (err) return handleError(err);
+//     // saved!
+//   });
 //{upsert:true},{ useUnifiedTopology: true }
